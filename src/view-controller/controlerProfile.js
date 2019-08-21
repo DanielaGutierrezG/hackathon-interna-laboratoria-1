@@ -24,6 +24,7 @@ export const submitFirebase = () => {
     const toDrawUrl = sessionStorage.getItem('url');
     const submit= document.getElementById('register');
     submit.addEventListener('click', () => {
+
         const fecha = new Date();
 
         const options = {
@@ -37,7 +38,7 @@ export const submitFirebase = () => {
             Company: objInf.Company,
             Host: objInf.Host,
             CreatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            photo: toDrawUrl,
+            photo: '',
             estado: 'on',
             fechaInicial: `${fecha.toLocaleDateString("es-ES", options)}`,
             fechaSalida: ''
