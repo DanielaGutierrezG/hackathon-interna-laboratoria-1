@@ -17,6 +17,7 @@ export default () => {
             <div class="input-field col s12">
               <div class="input-field col s12">
                 <input id="password" type="password" class="validate" autocomplete="off">
+                <p id="mensaje" class ="msj"></p>
                 <label for="password" id="password-label">Contraseña</label>
               </div>
             </div>
@@ -37,7 +38,8 @@ export default () => {
     if (email === "comunal@gmail.com" && password === "123456"){
     changeHash('#/admin')
   } else {
-    alert ("Correo o contraseña incorrecta")
+    const mensaje = createChildNode.querySelector('#mensaje');
+     mensaje.innerHTML = `Correo o contraseña incorrecta`;
   }
   })
   return createChildNode;
