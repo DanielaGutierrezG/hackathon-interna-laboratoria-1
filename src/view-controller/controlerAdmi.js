@@ -14,7 +14,7 @@ export const readRegister = (query) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td scope="row">${doc.data().photo}</th>
+                        <td scope="row"><img ${doc.data().photo}></th>
                         <td id='order-${doc.id}'>${doc.data().Nombre}</td>
 
                         
