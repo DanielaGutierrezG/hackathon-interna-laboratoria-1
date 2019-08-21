@@ -24,6 +24,13 @@ export const submitFirebase = () => {
     const toDrawUrl = sessionStorage.getItem('url');
     const submit= document.getElementById('register');
     submit.addEventListener('click', () => {
+
+        const fecha = new Date();
+
+        const options = {
+           year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric'
+       };
+
         const obj = {
             Nombre: objInf.Nombre,
             Email: objInf.Email,
@@ -31,9 +38,11 @@ export const submitFirebase = () => {
             Company: objInf.Company,
             Host: objInf.Host,
             CreatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            photo: toDrawUrl
+            photo: '',
+            estado: 'on',
+            fechaInicial: `${fecha.toLocaleDateString("es-ES", options)}`,
+            fechaSalida: ''
         }
-        console.log(obj)
         databaseRegister(obj);
         changeHash('#/home')
     }) 

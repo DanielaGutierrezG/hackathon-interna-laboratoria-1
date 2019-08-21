@@ -7,58 +7,57 @@ export default () => {
   const content = 
   `
   <div class="stepper-img">
-    <img class="stepper1-img" src="./assets/stepper1.jpeg"/>
+    <img class="stepper1-img" src="./assets/stepper11.jpeg"/>
   </div>
   <div class="container-register">
     <p class="visitor-header">VISITANTE</p>
     <div class="row container-form">
       <form class="col s12 register-visitor">
+
         <div class="row">
+          <div class="input-field col s4">
           <select id="identification">
             <option value="dni">DNI</option>
             <option value="ce">CE</option>
             <option value="pas">PAS</option>
             <option value="ptp">PTP</option>
           </select>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="identity" type="text" autocomplete="off">
-            <label for="identity">Documento de Identidad</label>
+          </div>
+          <div class="input-field col s8">
+          <input id="identity" type="text" autocomplete="off">
+          <label for="identity">Documento</label>
           </div>
         </div>
 
-        <div class="row">
+  
           <div class="input-field col s12">
             <input id="name" type="text" autocomplete="off">
             <label for="name" id="name-label">Nombre completo</label>
           </div>
-        </div>
-        <div class="row">
+    
+        
           <div class="input-field col s12">
             <input id="email" type="email" class="validate" autocomplete="off">
             <label for="email" id="email-label">Correo electrónico</label>
             <span class="helper-text" data-error="Correo inválido" data-success="Correo válido"></span>
           </div>
-        </div>
-
-        <div class="row">
+    
           <div class="input-field col s12">
             <input id="company" type="text" autocomplete="off">
-            <label for="company">Compañía</label>
+            <label for="company">¿A cuál empresa te diriges?</label>
           </div>
-        </div>
-        <div class="row">
+
           <div class="input-field col s12">
             <input type="text" id="host" class="autocomplete" autocomplete="off">
-            <label for="host">Host</label>
+            <label for="host">¿A quién visitas hoy?</label>
           </div>
-        </div>
+    
       </form>
-      <p class="plus-one">Añadir un acompañante: <span id="cant" class="plus-one-number"></span></p>
-      <a id="mas" class="btn-floating btn-small waves-effect waves-light sum-btn"><i class="material-icons">+</i></a>
-      <a id="menos" class="btn-floating btn-small waves-effect waves-light minus-btn"><i class="material-icons">-</i></a>
-      <button class="waves-effect waves-light btn" id="register-btn">Registrarse</button>
+      <p class="plus-one">Añadir acompañante:<span id="cant" class="plus-one-number">0</span></p>
+      <button id="mas" class="btn-floating btn-small waves-effect waves-light sum-btn">+</button>
+      <div class="next-btn-home">
+        <button class="waves-effect waves-light btn next-home-btn" id="next-home-btn">Siguiente</button>
+      </div>
     </div>
   </div>
   `;
@@ -73,23 +72,23 @@ export default () => {
     console.log(a)
   })
 
-  const disminuye = createChildNode.querySelector("#menos");
-  disminuye.addEventListener('click', () => {
-    a = a - 1;
-    document.getElementById("cant").textContent = a;
-    console.log(a)
-  })
+  // const disminuye = createChildNode.querySelector("#menos");
+  // disminuye.addEventListener('click', () => {
+  //   a = a - 1;
+  //   document.getElementById("cant").textContent = a;
+  //   console.log(a)
+  // })
 
-  const registerBtn = createChildNode.querySelector('#register-btn');
-  registerBtn.addEventListener('click', () => {
+  const nextHomeBtn = createChildNode.querySelector('#next-home-btn');
+  nextHomeBtn.addEventListener('click', () => {
     register()
     changeHash('#/photo')
   })
   
   const dataVisitors = {
-    Nombre : 'Franciree Arellan',
-    Email : 'arellan@gmail.com',
-    TipoDocumento: 'ptp',
+    Nombre : 'Gaby Moreno',
+    Email : 'gaby@gmail.com',
+    TipoDocumento: 'ce',
     Documento: '123'
   }
   

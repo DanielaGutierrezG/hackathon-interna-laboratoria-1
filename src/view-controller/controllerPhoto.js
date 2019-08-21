@@ -23,12 +23,13 @@ export const capturePhoto = () => {
         // Stop all video streams.
         videoTracks.forEach(function (track) { track.stop() });
         /*   */
-        var url = snapshotCanvas.toDataURL();
+        var url = snapshotCanvas.toDataURL("image/jpeg");
         sessionStorage.setItem('url', url);
         const btn = document.createElement('button')
         btn.setAttribute('id', 'nextbtn')
+        btn.setAttribute('class', 'waves-effect waves-light next-btn-photo')
         btn.type = 'button';
-        btn.textContent = 'siguiente'
+        btn.textContent = 'Siguiente'
         containerPhoto.appendChild(btn);
         player.style.display = "none";
         captureButton.style.display = "none";

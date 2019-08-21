@@ -2,29 +2,28 @@ import { changeHash } from '../view-controller/route.js'
 export default () => {
   const createChildNode = document.createElement('div');
   const content =
-    `<header>
-      <p>Logo</p>
-    </header>
-  
+    `<div class="container-registerAdmin">
+    <img class="logo-registerAdmin" src="./assets/Logo-Comunal.svg"/>
+      
     <div class="row register-visitor">
-      <form class="col s12 register-visitor">
+      <form class="centrado col s12 register-visitor">
         <h1>Hola!</h1>
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="emailAdmin" type="email" class="validate autocomplete="off">
-            <label for="email" id="emailAdmin-label">Correo electrónico</label>
-            <span class="helper-text" data-error="Correo inválido" data-success="Correo válido"></span>
+        <div class="input-field col s12">
+          <div class="input-field col s8">
+            <input id="emailAdmin" type="password" class="validate" autocomplete="off">
+            <label for="emailAdmin" id="emailAdmin-label">Correo electrónic</label>
           </div>
         </div>
-        <div class="row">
-          <div class="input-field col s6">
+        <div class="input-field col s12">
+          <div class="input-field col s8">
             <input id="password" type="password" class="validate" autocomplete="off">
             <label for="password" id="password-label">Contraseña</label>
           </div>
         </div>
       </form>
-      <button id="logIn" class="waves-effect waves-light btn">Empecemos</button>
+      <button id="logIn" class="waves-effect waves-light btn next-home-btn">Empecemos</button>
       <p>¿Olvidaste tu  contraseña?</p>
+    </div>
     </div>
     `;
   createChildNode.innerHTML = content;
