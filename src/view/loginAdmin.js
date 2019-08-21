@@ -10,7 +10,7 @@ export default () => {
         <h1>Hola!</h1>
         <div class="input-field col s12">
           <div class="input-field col s8">
-            <input id="emailAdmin" type="password" class="validate" autocomplete="off">
+            <input id="emailAdmin" type="text" class="validate" autocomplete="off">
             <label for="emailAdmin" id="emailAdmin-label">Correo electrónic</label>
           </div>
         </div>
@@ -31,7 +31,13 @@ export default () => {
   const registerbtn = createChildNode.querySelector("#logIn");
 
   registerbtn.addEventListener('click', () => {
+    const email = document.getElementById('emailAdmin').value;
+    const password = document.getElementById('password').value;
+    if (email === "comunal@gmail.com" && password === "123456"){
     changeHash('#/admin')
+  } else {
+    alert ("Correo o contraseña incorrecta")
+  }
   })
   return createChildNode;
 }
