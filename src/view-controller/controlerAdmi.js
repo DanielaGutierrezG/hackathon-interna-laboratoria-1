@@ -6,17 +6,17 @@ const editObj = (property, value, id) => {
     objPost[property] = value
     editFirestore(id, objPost);
 }
-//
+//<td scope="row">${doc.data().photo}</th>
 export const readRegister = (query) => {
     const containerRegister = document.querySelector('#containerRegister');
     if (containerRegister) {
         containerRegister.innerHTML = '';
         query.forEach((doc) => {
             containerRegister.innerHTML +=
-                `<table class='table tableWidth'>
+                `<table class="centered">
                     <tbody>
                         <tr>
-                            <td scope="row">${doc.data().photo}</th>
+                            
                             <td id='order-${doc.id}'>${doc.data().Nombre}</td>
                             <td id='order-${doc.id}'>${doc.data().fechaInicial}<br>${doc.data().fechaSalida !='' ? doc.data().fechaSalida : ''}</td>
                             <td>
@@ -24,10 +24,10 @@ export const readRegister = (query) => {
                                 ${doc.data().estado==='on' ? `<input id='status-${doc.id}' data-id="${doc.id}" class='status' type="checkbox" checked = 'true'>`
                                  : `<input id='status-${doc.id}' data-id="${doc.id}" class='status' type="checkbox">` }
                                 <div class="slide round"></div>
-                        </label>
+                                </label>
                             </td>
                             
-                            <td></td>
+                          
                         </tr>
                     </tbody>
             </table>`
@@ -65,6 +65,31 @@ export const filterValueBtn = () => {
         if (unsusbcribe) {
             unsusbcribe()
         }
+        switch (e.target.id) {
+            case 'todos': {
+                document.querySelector('#activos').style.backgroundColor = "#0000";
+                document.querySelector('#inactivos').style.backgroundColor = "#0000";
+                e.target.style.backgroundColor = "#ffc107";
+                break;
+            }
+            case 'activos': {
+                document.querySelector('#todos').style.backgroundColor = "#0000";
+                document.querySelector('#inactivos').style.backgroundColor = "#0000";
+                e.target.style.backgroundColor = "#ffc107";
+                break;
+            }
+            case 'inactivos': {
+                document.querySelector('#todos').style.backgroundColor = "#0000";
+                document.querySelector('#activos').style.backgroundColor = "#0000";
+                e.target.style.backgroundColor = "#ffc107";
+                break;
+            }
+            default: {
+                e.target.style.backgroundColor = "#ffc107";
+            }
+        }
+
+
         if(e.target.value != ''){
         unsusbcribe = filterFirestore(e.target.value, (query) => {
             readRegister(query);

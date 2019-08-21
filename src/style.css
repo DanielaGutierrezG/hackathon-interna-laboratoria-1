@@ -35,6 +35,10 @@
     /* padding-right: 10%; */
     /* margin-top: 3%; */
   }
+  .logo-registerAdmin{
+    align-self: center;
+    width: 50%;
+  }
 
   .btn-home {
     display: flex;
@@ -83,17 +87,114 @@
     padding: 5%;
     
   }
+  .container-registerAdmin {
+  
+      background-color: white;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 15px;
+      margin-top:15%;
+      margin-left: 12%;
+      width: 586px;
+      height: 840px;
+      padding: 5%;
+      display: flex;
+    flex-direction: column;
+      
+    
+  }
+  .btnFilterr{
+    width: 165px;
+    height: 160px;
+    background-color: #fff;
+    font-size: large;
+    color: #000;
+  }
+  .container-btn {
+    margin: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+
+  }
+  .btnsFilter{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  
+   
+
+  }
+  .btnfill {
+    
+
+  }
+  #todos{
+    border-style: solid;
+    border-width: 2px;
+    background-color: #FFD100;
+    border-color :#FFD100;
+    color: #000;
+    border-radius: 12px 0px 0px 12px;
+
+  }
+  #activos{
+    border-style: solid;
+    border-width: 2px;
+    background-color: #fff;
+    border-color :#FFD100;
+    color: #000;
+    border-radius: 0px;
+  }
+  #inactivos{
+    border-style: solid;
+    border-width: 2px;
+    background-color: #fff;
+    border-color :#FFD100;
+    color: #000;
+    border-radius: 0px 12px 12px 0px;
+  }
+
+  .estadoRegistro {
+    background-color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    width: 615px;
+    margin: auto;
+    height: 840px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  .container-table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 5%;
+  }
 
   /* .container-form {
     width: 100%;
   } */
+  .centrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  td{
+    width: 32%;
+  }
 
   .register-visitor {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 100%; */
+    width: 80%; 
     margin-bottom: 5%;
+  }
+  h1 {
+    margin: 1.8rem 0 1.68rem 0;
   }
 
 
@@ -286,7 +387,7 @@
   transition: .4s;
 }
 input:checked + .slide {
-  background-color: #8CE196;
+  background-color:#FFD100;;
   padding-left: 40px;
 }
 input:focus + .slide {
